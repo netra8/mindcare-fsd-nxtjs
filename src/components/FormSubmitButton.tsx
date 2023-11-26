@@ -1,7 +1,7 @@
 "use client";
 
 import { ComponentProps } from "react";
-import { useFormStatus } from "react-dom";
+import { experimental_useFormStatus } from "react-dom";
 
 type FormSubmitButtonProps = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export default function FormSubmitButton({
   className,
   ...props
 }: FormSubmitButtonProps) {
-  const { pending } = useFormStatus();
+  const { pending } = experimental_useFormStatus();
 
   return (
     <button
