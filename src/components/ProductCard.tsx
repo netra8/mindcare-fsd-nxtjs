@@ -13,6 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     1000 * 60 * 60 * 24 * 4;
 
   return (
+    <div>
     <Link
       href={"/products/" + product.id}
       className="card w-full bg-base-100 transition-shadow hover:shadow-xl"
@@ -33,5 +34,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         <PriceTag price={product.price} />
       </div>
     </Link>
+    </div>
   );
 }

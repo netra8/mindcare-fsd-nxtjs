@@ -1,0 +1,8 @@
+/* styles.css */
+.bgImage {
+    background-image: url('/your-background-image.jpg'); /* Replace with the correct path */
+    background-size: cover;
+    background-position: center;
+    padding: 1rem; /* Add padding as needed */
+  }
+  
