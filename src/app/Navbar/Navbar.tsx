@@ -42,6 +42,9 @@ export default async function Navbar() {
               />
             </div>
           </form>
+          <Link href="/all-products" className="btn-ghost btn">
+            Products
+          </Link>
           <ShoppingCartButton cart={cart} />
           <UserMenuButton session={session} />
         </div>

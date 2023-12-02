@@ -7,8 +7,6 @@ import Link from "next/link";
 interface HomeProps {
   searchParams: { page: string };
 }
-    
-
 
 export default async function Home({
   searchParams: { page = "1" },
@@ -31,7 +29,6 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-3xl font-semibold text-gray-800 mb-4">Welcome to Mindcare</h2>
       {currentPage === 1 && (
         <div className="hero rounded-xl bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
