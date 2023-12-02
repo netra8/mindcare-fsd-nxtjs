@@ -32,10 +32,13 @@ export default async function SearchPage({
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
+    <div className="text-left text-xl text-black mb-8 ">
+      <div className="mb-4 font-bold">Search results for &quot;{query}&quot;</div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </div>
     </div>
   );
 }
