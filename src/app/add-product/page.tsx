@@ -3,19 +3,26 @@ import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
+import { error } from "console";
+import React, { useState, useEffect } from 'react';
 
 export const metadata = {
   title: "Add Product - Mindcare",
 };
+
+const allowedEmails = ['1032210830@mitwpu.edu.in'];
 
 async function addProduct(formData: FormData) {
   "use server";
 
   const session = await getServerSession(authOptions);
 
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/add-product");
-  }
+ 
+
+  // if (session?.user?.email && !allowedEmails.includes(session.user.email)) {
+  //   // redirect("/api/auth/signin?callbackUrl=/add-product");
+  //   throw new Error("Unautho access");
+  // }
 
   const name = formData.get("name")?.toString();
   const description = formData.get("description")?.toString();
@@ -36,8 +43,11 @@ async function addProduct(formData: FormData) {
 export default async function AddProductPage() {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/add-product");
+  // if (!session) {
+  //   redirect("/api/auth/signin?callbackUrl=/add-product");
+  // }
+  if (!session || session?.user?.email && !allowedEmails.includes(session.user.email)) {
+    redirect("/");
   }
 
   return (
