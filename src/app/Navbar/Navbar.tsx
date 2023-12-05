@@ -8,7 +8,6 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
 
-
 async function searchProducts(formData: FormData) {
   "use server";
 
@@ -18,8 +17,6 @@ async function searchProducts(formData: FormData) {
     redirect("/search?query=" + searchQuery);
   }
 }
-
-
 
 export default async function Navbar() {
   const session = await getServerSession(authOptions);

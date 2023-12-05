@@ -44,7 +44,7 @@ export default function Home() {
           Explore our collection of products and take a step towards a healthier
           and happier you.
         </p>
-        <Link href="/all-products" className="btn">
+        <Link href="/all-products" className="btn btn-primary">
           Shop Now
         </Link>
       </div>
